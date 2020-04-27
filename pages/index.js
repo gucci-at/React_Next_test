@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Counter from '../components/Counter_5_12';
+import Counter from '../components/Counter';
 import style from '../static/Style';
 
 export default () =><div>
