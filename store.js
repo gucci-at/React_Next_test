@@ -1,40 +1,33 @@
-import { createStore, applyMiddleware } from 'redux';
-import thunkMiddleware from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux'
+//import thunkMiddleware from 'redux-thunk'
+import rootSaga from './components/sagas';
+import logger from 'redux-logger'
+import createSagaMiddleware from 'redux-saga'
+import rootReducer from './reducers'
 
-
-// ステート初期値
 const initial = {
-  message:'START',
-  count: 0
-}
-
-
-// レデューサー
-function counterReducer (state = initial, action) {
-  switch (action.type) {
-    case 'INCREMENT':
-      return {
-        message: 'INCREMENT',
-        count: state.count + 1
-      };
-    case 'DECREMENT':
-      return {
-        message: 'DECREMENT',
-        count: state.count - 1
-      };
-    case 'RESET':
-      return {
-        message: 'RESET',
-        count: initial.count
-      };
-    default:
-      return state;
+  counter:{
+    message:'START',
+    count: 0
+  },
+  districts:{
+      isFetching: false,
+      prefs: [],
+      cities: []
+  },
+  clock:{
+    light: false,
+    ts: Date.now(),
+    lastUpdate: 0
   }
 }
 
-
 // initStore関数（redux-store.jsで必要）
 export function initStore(state = initial) {
-  return createStore(counterReducer, state,
-    applyMiddleware(thunkMiddleware))
+  const sagaMiddleware = createSagaMiddleware();
+  const store = createStore(rootReducer, state,
+    applyMiddleware(sagaMiddleware, logger))
+  sagaMiddleware.run(rootSaga);
+
+  return store;
 }

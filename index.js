@@ -81,6 +81,14 @@ function * incrementAsync() {
     yield put({type: 'INCREMENT'});
 }
 
+function * incrementTimer() {
+    yield setInterval(() => {
+        console.log('timeout.');
+        doaction('INCREMENT');
+    }, 1000);
+    console.log('timer started.');
+}
+
 function fetchCityCodes(prefCode) {
     console.log('request sending.');
     const URL = `https://www.land.mlit.go.jp/webland/api/CitySearch?area=${prefCode}`;
