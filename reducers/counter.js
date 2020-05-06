@@ -4,7 +4,7 @@ const initial = {
     }
 
 export default function counter(state = initial, action) {
-    console.table(state);
+    //console.table(state);
     switch (action.type) {
     case 'INCREMENT':
         return Object.assign({}, state, {
