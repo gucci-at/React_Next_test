@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
 
-class Counter extends Component {
+class Counter_5_12 extends Component {
   style = {
     fontSize:"12pt",
     padding:"5px 15px"
@@ -33,7 +33,7 @@ class Counter extends Component {
   render () {
     return (
       <div>
-        <p>{this.props.message}: {this.props.count}</p>
+        <p>{this.props.counter.message}: {this.props.counter.count}</p>
         <button style={this.style} onClick={this.doAction}>
           Count</button>
         <button style={this.style} onClick={this.reset}>
@@ -44,5 +44,5 @@ class Counter extends Component {
 }
 
 
-Counter = connect((state)=> state)(Counter);
-export default Counter;
+Counter_5_12 = connect((state)=> state)(Counter_5_12);
+export default Counter_5_12;
