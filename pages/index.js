@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Link from 'next/link';
 import Counter from '../components/Counter';
 import Counter_5_12 from '../components/Counter_5_12';
-import Clock, {startClock} from '../components/Clock';
+import Clock from '../components/Clock';
 import Districts from '../components/Districts';
 import style from '../static/Style';
 
@@ -12,6 +12,7 @@ export default ()=> <div>
     <p>Welcome to next.js!</p>
     <hr />
     <div>
+      <Clock />
       <Counter />
       <Counter_5_12 />
       <Districts />

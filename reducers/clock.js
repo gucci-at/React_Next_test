@@ -1,6 +1,16 @@
-const clock = (state = { lastUpdate: 0, light: false }, action) => {
+const initial = {
+  light: false,
+  ts: Date.now(),
+  lastUpdate: 0
+}
+
+const clock = (state = initial, action) => {
     switch (action.type) {
-      case 'TICK': return { lastUpdate: action.ts, light: !!action.light }
+      case 'TICK':
+        return Object.assign({}, state, {
+          lastUpdate: action.ts,
+          light: !!action.light
+        });
       default: return state
     }
   }

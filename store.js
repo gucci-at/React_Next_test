@@ -14,8 +14,13 @@ const initial = {
       isFetching: false,
       prefs: [],
       cities: []
-    }
+  },
+  clock:{
+    light: false,
+    ts: Date.now(),
+    lastUpdate: 0
   }
+}
 
 // initStore関数（redux-store.jsで必要）
 export function initStore(state = initial) {
