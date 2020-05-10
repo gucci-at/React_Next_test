@@ -5,6 +5,7 @@ import Counter_5_12 from '../components/Counter_5_12';
 import Clock from '../components/Clock';
 import Districts from '../components/Districts';
 import style from '../static/Style';
+import Button from '../container/ConnectButton';
 
 export default ()=> <div>
     {style}
@@ -19,6 +20,7 @@ export default ()=> <div>
       <Link as="/districts" href="/other">
         <button>Go to Other page &gt;&gt;</button>
       </Link>
+      <Button />
     </div>
   </div>
 

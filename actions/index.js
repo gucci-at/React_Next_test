@@ -14,3 +14,17 @@ export function receivePosts(data) {
     cities: data
   }
 }
+
+export const setPersonName = name => ({
+  type: 'SET_PERSON_NAME',
+  name
+})
+
+export const setPersonAge = age => ({
+  type: 'SET_PERSON_AGE',
+  age
+})
+
+export const addPersonAge = age => ({
+  type: 'ADD_PERSON_AGE'
+})
