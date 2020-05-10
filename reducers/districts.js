@@ -1,4 +1,4 @@
-import { REQUEST_POSTS, RECEIVE_POSTS } from '../components/actions'
+import { REQUEST_POSTS, RECEIVE_POSTS } from '../actions'
 
 const Initial = {
   isFetching: false,

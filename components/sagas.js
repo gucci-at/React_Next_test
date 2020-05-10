@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import { receivePosts, REQUEST_POSTS } from './actions';
+import { receivePosts, REQUEST_POSTS } from '../actions';
 import { call, fork, takeLatest, put } from 'redux-saga/effects';
 
 function fetchCityCodes(prefCode) {
