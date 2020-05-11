@@ -10,7 +10,8 @@ export const Button = ({ onClick, person }) => (
       Click!
       </button>
     </p>
-    name: {person.name} ,age:{person.age} 
+    name: {person.name}<br />
+    age:{person.age} 
   </div>
 )
 
