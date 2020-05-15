@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 export const person = (state, action) => {
   if(!state) return {
-    name: 'tkow',
+    name: 'reducer',
     age: 12
   }
   return combineReducers({

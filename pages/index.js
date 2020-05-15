@@ -9,11 +9,15 @@ import Districts from '../components/Districts';
 import style from '../static/Style';
 import Button from '../container/ConnectButton';
 import ContactForm from '../components/ContactForm';
+import ViewApp from '../container/ViewApp';
 
 export default ()=> <div>
     {style}
     <h1>Next.js</h1>
     <p>Welcome to next.js!</p>
+    <Link as="/districts" href="/other">
+      <button>Go to Other page &gt;&gt;</button>
+    </Link>
     <hr />
     <div>
       <Hello />
@@ -21,11 +25,9 @@ export default ()=> <div>
       <Counter />
       <Counter_5_12 />
       <Districts />
-      <Link as="/districts" href="/other">
-        <button>Go to Other page &gt;&gt;</button>
-      </Link>
       <Button />
       <ContactForm />
+      <ViewApp />
     </div>
   </div>
 

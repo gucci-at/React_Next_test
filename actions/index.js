@@ -28,3 +28,7 @@ export const setPersonAge = age => ({
 export const addPersonAge = age => ({
   type: 'ADD_PERSON_AGE'
 })
+
+export const inputName = (name) => (
+  { type: 'INPUT_NAME', payload: {name} }
+);

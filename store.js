@@ -19,6 +19,10 @@ const initial = {
     light: false,
     ts: Date.now(),
     lastUpdate: 0
+  },
+  person:{
+    name:'createStore',
+    age:0
   }
 }
 

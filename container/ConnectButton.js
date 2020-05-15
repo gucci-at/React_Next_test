@@ -11,13 +11,8 @@ const getRandomName = () => {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state)
   return state
 }
-
-// const mapDispatchToProps = (dispatch, ownProps) => ({
-//   onClick: () => dispatch(setPersonName(getRandomName()))
-// })
 
 const mapDispatchToProps = {
   onClick: () => setPersonName(getRandomName())

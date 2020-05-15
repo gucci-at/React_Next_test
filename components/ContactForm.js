@@ -1,5 +1,6 @@
 // https://suwaru.tokyo/%E3%80%90formik-yup%E3%80%91react%E7%B0%A1%E5%8D%98%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E4%BD%9C%E6%88%90%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E8%A7%A3%E8%AA%AC/
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import {
     Formik,
     Form,
@@ -29,8 +30,9 @@ const validationSchema = Yup.object().shape({
 class ContactForm extends Component {
     constructor(props) {
         super(props);
+        const {name} = this.props.person;
         this.defaultFormState = {
-            name: '',
+            name: name,
             email: '',
             tel: '',
             content: '',
@@ -43,11 +45,9 @@ class ContactForm extends Component {
      */
     handleSubmit (form) {
         // 値をコンソール表示
-        console.log(form)
+        console.log('handleSubmit'+JSON.stringify(form))
     }
     doSubmit(action) {
-        console.log("doSubmit");
-        console.table(this.props);
         return this.props.dispatch(action);
       }
 
@@ -117,5 +117,4 @@ class ContactForm extends Component {
         )
     }
 }
-
-export default ContactForm;
+export default connect((state)=> state)(ContactForm);
