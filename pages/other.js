@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import Districts from '../components/Districts';
+import Clock from '../components/Clock';
+import ViewApp from '../container/ViewApp';
 
 const h1 = {
   fontSize:'72pt',
@@ -19,10 +21,13 @@ const p = {
 export default () =><div>
   <h1 style={h1}>Next.js</h1>
   <p style={p}>This is Other page.</p>
+  <Link href="/">
+    <a>&lt;&lt; Back to Index page</a>
+  </Link>
   <hr/>
   <div>
-    <Link href="/">
-      <a>&lt;&lt; Back to Index page</a>
-    </Link>
+   <Clock />
+    <Districts />
+    <ViewApp />
   </div>
 </div>
